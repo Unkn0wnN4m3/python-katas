@@ -9,7 +9,7 @@ class Colors:
         reset -- reset color
     """
 
-    blue = "\033[94m"
-    cyan = "\033[96m"
-    green = "\033[92m"
-    reset = "\033[0m"
+    BLUE = "\033[94m"
+    CYAN = "\033[96m"
+    GREEN = "\033[92m"
+    RESET = "\033[0m"

@@ -41,6 +41,8 @@ class Square:
         ]
 
     def print_with_color(self, color):
+
+    def print_with_color(self, color: str) -> None:
         """
         Print the square in your terminal, and colorize de output.
 
@@ -50,17 +52,13 @@ class Square:
         Return:
             None
         """
-        # [ ["*", "*"], ["*", "*"] ]
-        for i in self.build():
-            # ["*", "*"]
-            for j in i:
-                match color:
-                    case "green":
-                        print(f"{Colors.green}{j}{Colors.reset}", end=" ")
-                    case "cyan":
-                        print(f"{Colors.cyan}{j}{Colors.reset}", end=" ")
-                    case "blue":
-                        print(f"{Colors.blue}{j}{Colors.reset}", end=" ")
-                    case _:
-                        print(f"{Colors.green}{j}{Colors.reset}", end=" ")
-            print()
+        match color:
+            case "green":
+                print(f"{Colors.GREEN}{self.build_string()}{Colors.RESET}", end=" ")
+            case "cyan":
+                print(f"{Colors.CYAN}{self.build_string()}{Colors.RESET}", end=" ")
+            case "blue":
+                print(f"{Colors.BLUE}{self.build_string()}{Colors.RESET}", end=" ")
+            case _:
+                print(f"{Colors.GREEN}{self.build_string()}{Colors.RESET}", end=" ")
+
