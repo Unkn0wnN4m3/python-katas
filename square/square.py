@@ -9,12 +9,15 @@ class Square:
     """
     Make a square filled out by any latter you want.
 
-    Attrubutes:
-        side -- the side lenght of the square
+    Attributes:
+        side -- the side length of the square
         symbol -- ascii symbol or text to be used (default: "*")
 
     Methods:
-        build() -- return a list of lists with strings
+        build_iter() -- return a list of lists with strings
+        build_string() -- return the square in text string
+        print_with_color() -- prints on console with colors
+        build() -- print in console using the effects library "terminaltexteffects"
     """
 
     def __init__(self, side: int, symbol: str) -> None:
@@ -28,9 +31,9 @@ class Square:
         self.__side = side
         self.__symbol = symbol
 
-    def build(self) -> List[List[str]]:
+    def build_iter(self) -> List[List[str]]:
         """
-        Build into a list of lists.
+        Build a iterable, a list of lists.
 
         Parameters:
             None
