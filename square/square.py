@@ -1,5 +1,7 @@
 from typing import List
 
+from terminaltexteffects.effects import effect_print
+
 from square import Colors
 
 
@@ -62,3 +64,17 @@ class Square:
             case _:
                 print(f"{Colors.GREEN}{self.build_string()}{Colors.RESET}", end=" ")
 
+    def print_with_effect(self) -> None:
+        """
+        Print the square in your terminal using 'terminaltexteffects'.
+
+        Parameters:
+        None
+
+        Return:
+            None
+        """
+        effect = effect_print.Print(self.build_string())
+        with effect.terminal_output() as terminal:
+            for frame in effect:
+                terminal.print(frame)
