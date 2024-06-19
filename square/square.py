@@ -42,7 +42,25 @@ class Square:
             [f"{self.__symbol}" for _ in range(self.__side)] for _ in range(self.__side)
         ]
 
-    def print_with_color(self, color):
+    def build_string(self) -> str:
+        """
+        builds directly on square in text strings
+
+        Parameters:
+            None
+
+        Return:
+            The square in a text string
+        """
+        txt = ""
+
+        for i in self.build_iter():
+            for j in i:
+                txt += j + " "
+
+            txt += "\n"
+
+        return txt
 
     def print_with_color(self, color: str) -> None:
         """
