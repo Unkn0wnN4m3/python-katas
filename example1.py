@@ -1,15 +1,32 @@
 from square import Square
 
-# x -> proceso -> 3
-# f(x) = x2 -> 2^2
-
 if __name__ == "__main__":
     try:
-        side = int(input("Give me the square lenght: "))
-        symbol = str(input("Give me the square symbol: "))
-        color = str(input("Choose one color [green|cyan|blue]: ")).lower()
+        side = int(input("What size square do you want? "))
+        symbol = str(input("What symbol do you want to use? "))
     except ValueError:
         print("Oops! That was no valid number. Try again...")
+    except Exception as e:
+        print(f"Something went wrong: {e}")
     else:
-        sq = Square(side=side, symbol=symbol)
-        sq.print_with_color(color=color)
+        sq = Square(side, symbol)
+
+        try:
+            print_mode = int(
+                input("Do you want to print it with (1) color or with (2) effects? ")
+            )
+        except ValueError:
+            print("Oops! That was no valid number. Try again...")
+        except Exception as e:
+            print(f"Something went wrong: {e}")
+        else:
+            if print_mode == 1:
+                color = str(input("What color do you want? [green|cyan|blue] ")).lower()
+
+            match print_mode:
+                case 1:
+                    sq.print_with_color(color)
+                case 2:
+                    sq.print_with_effect()
+                case _:
+                    print("Invalid option. Run the script again")
