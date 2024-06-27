@@ -20,11 +20,9 @@ if __name__ == "__main__":
         except Exception as e:
             print(f"Something went wrong: {e}")
         else:
-            if print_mode == 1:
-                color = str(input("What color do you want? [green|cyan|blue] ")).lower()
-
             match print_mode:
                 case 1:
+                    color = str(input("What color do you want? [green|cyan|blue] ")).lower()
                     sq.print_with_color(color)
                 case 2:
                     sq.print_with_effect()
