@@ -5,7 +5,8 @@ def derivada(base, exponente):
 
     print(base, exponente)
 
+
 # x^2
 # 2x, si x = 4
 # 2(4) = 8
-derivada(4, 2) # esperamos un 8
+derivada(4, 2)  # esperamos un 8

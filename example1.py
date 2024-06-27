@@ -22,7 +22,9 @@ if __name__ == "__main__":
         else:
             match print_mode:
                 case 1:
-                    color = str(input("What color do you want? [green|cyan|blue] ")).lower()
+                    color = str(
+                        input("What color do you want? [green|cyan|blue] ")
+                    ).lower()
                     sq.print_with_color(color)
                 case 2:
                     sq.print_with_effect()
